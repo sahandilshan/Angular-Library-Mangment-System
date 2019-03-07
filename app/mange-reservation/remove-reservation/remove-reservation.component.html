@@ -1,0 +1,85 @@
+<p class="topic">Delete Reservation</p>
+<form [formGroup]="form">
+
+
+
+  <!-- for isbn No -->
+  <div class="form-group">
+    <label>ISBN No :</label>
+    <input class="form-control myFav" (keyup.enter)="findIsbn()" formControlName="isbn" id="isbn1" />
+    <div class="alert alert-danger myFav" *ngIf="isbn.touched && !isbn.valid">
+      <div *ngIf="isbn.errors.required">ISBN is reqiured </div>
+      <div *ngIf="isbn.errors.minlength">ISBN Number should be minumum 10 characters</div>
+      <div *ngIf="isbn.errors.maxlength">ISBN Number should be maximum 13 characters</div>
+      <div *ngIf="isbn.errors.cannotContainSpaces">ISBN cannot contain spaces</div>
+    </div>
+    <button type="button" class="btn btn-primary" [disabled]="!isbn.valid" 
+      (click)="findIsbn()" style="margin-top: 5px">Find</button>
+  </div>
+
+  <!-- for Title -->
+  <div class="form-group">
+    <label>Title :</label>
+    <input type="text" readonly class="form-control myFav" formControlName="title">
+  </div>
+
+  <p> </p>
+
+<div *ngIf="itemData!=null">
+    <div class="form-group">
+        <label> <p *ngIf="itemData.reservations.reservations.length==0">this item has not been reserved....</p></label>
+      </div>
+
+  <div *ngFor="let reservation of itemData.reservations.reservations">
+
+<div class="gradientBg myFav" style="padding-bottom: 5px;">
+  
+    <div class="w3-row">
+        <div class="w3-col w3-container" style="width:33%;text-align: right">
+      <label>Reader ID :</label>
+    </div>
+    <div class="w3-col w3-container" style="width:67%">
+      <label>{{reservation.reader.id}}</label>
+    </div>
+  </div> 
+  <div class="w3-row">
+    <div class="w3-col w3-container" style="width:33%;text-align: right">
+      <label>Reader Name :</label>
+    </div>
+    <div class="w3-col w3-container" style="width:67%">
+      <label>{{reservation.reader.name}}</label>
+    </div>
+  </div>
+  <div class="w3-row form-group" >
+    <div class="w3-col w3-container" style="width:33%;text-align: right">
+      <label>Reserved Date :</label>
+    </div>
+    <div class="w3-col w3-container" style="width:67%">
+      <label>{{reservation.date.day}}/{{reservation.date.month}}/{{reservation.date.year}}</label>
+    </div>
+  
+</div>
+<button type="button" class="btn" value="submit" 
+      (click)="removeReservation(itemData.w1673657_isbn,reservation.reader.id)"
+  style="margin-left:10px; color:black ">Remove Reservation </button>
+</div>
+<br>
+</div>
+
+  </div>
+
+</form>
+
+
+<p> </p>
+
+<footer class="w3-container w3-center w3-black w3-xlarge" [class.myFooter]="itemData==null"> 
+    <a href="#"><i class="fa fa-facebook-official"></i></a>
+    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-flickr"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <p class="w3-medium">
+    Powered by sahan dilshan
+    </p>
+  </footer>

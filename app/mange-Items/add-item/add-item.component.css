@@ -1,0 +1,32 @@
+
+
+/* .myBtn
+{
+    position: relative;
+    left: 41%;
+    top:-43px;
+    z-index: -100;
+    float: left;
+} */
+
+/* .my{
+    position: relative;
+    left: -5%;
+} */
+
+#check
+{
+    width: 20%;
+}
+
+a{
+    padding-right: 6px;
+}
+
+.myFooter
+{
+    position: fixed;
+   width: 97.5%;
+   bottom: 10px;
+}
+

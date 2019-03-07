@@ -1,0 +1,83 @@
+<p class="topic">Add Reader</p>
+<form [formGroup]="form">
+
+  <div class="form-group">
+    <label>Reader ID :</label>
+    <input class="form-control myFav" readonly maxlength="7" formControlName="readerID" />
+    <div class="alert alert-danger myFav" *ngIf="readerID.touched && !readerID.valid">
+      <div *ngIf="readerID.errors.required">Readr ID is reqiured </div>
+      <div *ngIf="readerID.errors.minlength">Readr ID Number should be minumum of 7 characters</div>
+      <div *ngIf="readerID.errors.maxlength">Readr ID Number should be maximum of 7 characters</div>
+      <div *ngIf="readerID.errors.cannotContainSpaces">Readr ID cannot contain spaces</div>
+    </div>
+    
+    <button type="button" class="btn" 
+      style="margin-top: 5px" (click)="generateId()">Generate Id</button>
+  </div>
+
+  <!-- for Name -->
+  <div class="form-group">
+    <label>First Name :</label>
+    <input type="text" class="form-control myFav" formControlName="fname">
+    <div class="alert alert-danger myFav" *ngIf="fname.touched && !fname.valid">
+        <div *ngIf="fname.errors.required">First Name is reqiured </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Last Name :</label>
+    <input type="text" class="form-control myFav" formControlName="lname">
+    <div class="alert alert-danger myFav" *ngIf="lname.touched && !lname.valid">
+        <div *ngIf="lname.errors.required">Last name is reqiured </div>
+  </div>
+  </div>
+
+  <!-- for DOB -->
+  <div class="form-group">
+    <label>Date of Birth :</label>
+    <input type="date" class="form-control myFav" formControlName="dob">
+    <div class="alert alert-danger myFav" *ngIf="dob.touched && !dob.valid">
+        <div *ngIf="dob.errors.required">DOB is reqiured </div>
+  </div>
+  </div>
+
+
+  <!-- for email -->
+  <div class="form-group">
+    <label>Email :</label>
+    <input type="email" class="form-control myFav" formControlName="email">
+    <div class="alert alert-danger myFav" *ngIf="email.touched && !email.valid">
+        <div *ngIf="email.errors.required">Email is reqiured </div>
+        </div>
+  </div>
+
+  <!-- for mobileNumber -->
+  <div class="form-group">
+    <label>Contact No :</label>
+    <input type="text" class="form-control myFav" maxlength="10" formControlName="contactNo">
+    <div class="alert alert-danger myFav" *ngIf="contactNo.touched && !contactNo.valid">
+        <div *ngIf="contactNo.errors.required">Contact No is reqiured </div>
+        <div *ngIf="contactNo.errors.minlength">Enter a valid contact number </div>
+  </div>
+  </div>
+
+  <button type="button" class="btn btn-primary"  [disabled]="!form.valid" value="submit" 
+  (click)="addReader()"
+    style="margin-right:10px; ">Add Reader </button>
+  <button type="reset" class="btn btn-primary" value="clear" >Clear </button>
+
+  </form>
+
+  <p> </p>
+<p> </p>
+
+<footer class="w3-container w3-center w3-black w3-xlarge" > 
+    <a href="#"><i class="fa fa-facebook-official"></i></a>
+    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-flickr"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <p class="w3-medium">
+    Powered by sahan dilshan
+    </p>
+  </footer>

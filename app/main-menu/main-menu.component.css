@@ -1,0 +1,154 @@
+button
+{
+    margin-bottom: 5px;
+}
+
+
+
+.titleHead {
+    margin-bottom: 0;
+    font-size: 24px;
+    padding: 1rem 1rem;
+    /* background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 1%, rgba(65,65,65,1) 50%, rgba(11,11,13,1) 98%); */
+
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.950315160243785) 12%, rgba(74,73,73,0.9223039557619923) 50%,
+     rgba(0,0,0,0.9475140397956058) 89%);
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #e7e7e7;
+  }
+
+.myColor
+{
+    color: #f1f1f1;
+    /* background: rgb(57,57,57);
+    background: linear-gradient(90deg, rgba(57,57,57,1) 0%, rgba(0,0,0,1) 50%, rgba(80,80,80,1) 100%); */
+    /* background: rgb(50,49,49);
+background: linear-gradient(90deg, rgba(50,49,49,0.8606793059020483) 0%, rgba(0,0,0,1) 50%,
+ rgba(47,47,47,0.8606793059020483) 87%); */
+
+ background: rgb(14,10,10);
+background: linear-gradient(90deg, rgba(14,10,10,0.9082983535210959) 10%, rgba(14,10,10,0.7122199221485469) 45%, 
+rgba(29,25,25,0.9391106784510679) 90%);
+}
+
+  h1{
+    font-weight: bold;
+  }
+
+
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 99; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+
+.sidenav button {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    background-color: Transparent;
+    border: none;
+    cursor:pointer;
+    text-align: left;
+    /* overflow: hidden; */
+    /* outline:none; */
+   
+
+}
+
+
+/* When you mouse over the navigation links, change their color */
+.sidenav button:hover {
+    color: #f1f1f1;
+    border: 2px solid #e7e7e7;
+    /* border: 2px solid #e7e7e7; */
+    
+}
+
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    
+    
+}
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav button {font-size: 18px;}
+}
+
+.w3-overlay
+{
+    position:fixed;
+    display:none;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0,0,0,0.5);
+    z-index:2
+}
+
+
+
+
+  .dropdown-container {
+    display: none;
+    /* background-color: #262626; */
+    /* text-align: right; */
+    margin-left: 35px;
+    transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.3s; /* this removes the transition delay so the menu will be visible while the other styles transition */
+
+}
+
+.dropdown-container button {
+    width: 225px;
+    font-size: 18px;
+    font-style: italic;
+    text-align: left;
+    /* overflow: hidden; */
+    /* outline:none; */
+   
+
+}
+
+@media screen and (max-width: 500px) {
+    .w3-left, .w3-right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+      
+    }
+  }
+
+
+
+

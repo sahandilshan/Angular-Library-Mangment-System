@@ -1,0 +1,210 @@
+<!-- <h2 class="w3-opacity">Text Opacity</h2> -->
+<!-- <div class="w3-row gradientBg">
+    <div class="w3-col w3-container" style="width:20%;text-align: right">Type :</div>
+    <div class="w3-col  w3-container gradientBg" style="width:60%">
+      {{type}}
+    </div>
+    <div class="w3-col w3-container" style="width:20%"></div>
+
+  </div>
+  <div class="w3-row gradientBg">
+    <div class="w3-col w3-container" style="width:20%;text-align: right">ISBN :</div>
+    <div class="w3-col  w3-container gradientBg" style="width:60%">
+      {{item.w1673657_isbn}}
+    </div>
+    <div class="w3-col w3-container" style="width:20%"></div>
+  </div>
+
+  <div class="w3-row gradientBg">
+    <div class="w3-col w3-container" style="width:20%;text-align: right">Title :</div>
+    <div class="w3-col  w3-container gradientBg" style="width:60%">
+      {{item.w1673657_title}}
+    </div>
+    <div class="w3-col w3-container" style="width:20%"></div>
+  </div>
+
+  <div class="w3-row gradientBg">
+      <div class="w3-col w3-container" style="width:20%;text-align: right">Publisher :</div>
+      <div class="w3-col  w3-container gradientBg" style="width:60%">
+        {{item.w1673657_pubishers}}
+      </div>
+      <div class="w3-col w3-container" style="width:20%"></div>
+    </div> -->
+
+<div class="w3-row w3-border gradientBg myFav2"  [class.gradientBg]="item.type=='book'" [class.gradientBg2]="item.type=='dvd'">
+  <div class="w3-third rightAlign w3-container">
+    <p>Type :</p>
+  </div>
+  <div class="w3-twothird w3-container">
+    <ng-container *ngIf="type=='book'; else elseTemplate2">
+      <p>Book</p>
+    </ng-container>
+    <ng-template #elseTemplate2>
+      <p>DVD</p>
+    </ng-template>
+  </div>
+</div>
+
+<div class="w3-row w3-border gradientBg myFav2" [class.gradientBg]="item.type=='book'" [class.gradientBg2]="item.type=='dvd'">
+  <div class="w3-third rightAlign w3-container">
+    <p>ISBN :</p>
+  </div>
+  <div class="w3-twothird w3-container">
+    <p>{{item.w1673657_isbn}}</p>
+  </div>
+</div>
+
+<div class="w3-row w3-border gradientBg myFav2" [class.gradientBg]="item.type=='book'" [class.gradientBg2]="item.type=='dvd'">
+  <div class="w3-third rightAlign w3-container">
+    <p>Title :</p>
+  </div>
+  <div class="w3-twothird w3-container">
+    <p>{{item.w1673657_title}}</p>
+  </div>
+</div>
+
+<div class="w3-row w3-border gradientBg myFav2" [class.gradientBg]="item.type=='book'" [class.gradientBg2]="item.type=='dvd'">
+  <div class="w3-third rightAlign w3-container">
+    <p>Publishers :</p>
+  </div>
+  <div class="w3-twothird w3-container">
+    <p>{{item.w1673657_publishers}}</p>
+  </div>
+</div>
+
+<div class="w3-row w3-border gradientBg myFav2" [class.gradientBg]="item.type=='book'" [class.gradientBg2]="item.type=='dvd'">
+  <div class="w3-third rightAlign w3-container">
+    <p>Sector :</p>
+  </div>
+  <div class="w3-twothird w3-container">
+    <p>{{item.w1673657_sector}}</p>
+  </div>
+</div>
+
+
+
+<!-- for authors -->
+<div *ngIf="item.type=='book'" class="w3-row w3-border gradientBg myFav2">
+  <div class="w3-third rightAlign w3-container">
+    <p>No of pages :</p>
+  </div>
+  <div class="w3-twothird w3-container">
+    <p>{{item.w1673657_noOfPages}}</p>
+  </div>
+</div>
+
+<!-- for authors -->
+<div *ngIf="item.type=='book'" class="w3-row w3-border gradientBg myFav2">
+  <div class="w3-third rightAlign w3-container">
+    <p>Author(s) :</p>
+  </div>
+  <div class="w3-twothird w3-container">
+    <p *ngFor="let author of item.w1673657_authors">{{author}}</p>
+  </div>
+</div>
+
+<!-- for languages -->
+<div *ngIf="item.type=='dvd'" class="w3-row w3-border gradientBg2 myFav2">
+  <div class="w3-third w3-container">
+    <p>Language(s) :</p>
+  </div>
+  <div class="w3-twothird w3-container">
+    <p *ngFor="let language of item.w1673657_languages">{{language}}</p>
+  </div>
+</div>
+
+<!-- for subtitles -->
+<div *ngIf="item.type=='dvd'" class="w3-row w3-border gradientBg2 myFav2">
+    <div class="w3-third w3-container">
+      <p>Subtitle(s) :</p>
+    </div>
+    <div class="w3-twothird w3-container">
+      <p *ngFor="let subtitle of item.w1673657_subtitles">{{subtitle}}</p>
+    </div>
+  </div>
+
+<!-- for Creators -->
+<div *ngIf="item.type=='dvd'" class="w3-row w3-border gradientBg2 myFav2">
+    <div class="w3-third w3-container">
+      <p>Creator(s) :</p>
+    </div>
+    <div class="w3-twothird w3-container">
+      <p *ngFor="let creator of item.w1673657_creators">{{creator}}</p>
+    </div>
+  </div>
+
+<!-- for Actors -->
+<div *ngIf="item.type=='dvd'" class="w3-row w3-border gradientBg2 myFav2">
+    <div class="w3-third w3-container">
+      <p>Actor(s) :</p>
+    </div>
+    <div class="w3-twothird w3-container">
+      <p *ngFor="let actor of item.w1673657_actors">{{actor}}</p>
+    </div>
+  </div>
+
+<!-- for reader -->
+<div class="w3-row w3-border myFav2" 
+[class.gradientBg]="item.type=='book'" [class.gradientBg2]="item.type=='dvd'">
+  <div class="w3-threequarter w3-container">
+    <ng-container *ngIf="item.w1673657_borrowed; else elseTemplate">
+      <p>Borrowed</p>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <p> Not Borrowed</p>
+    </ng-template>
+  </div>
+  <div class="w3-quarter w3-container">
+
+
+  </div>
+</div>
+
+<!-- for reader details -->
+<div *ngIf="item.w1673657_borrowed" >
+<div class="w3-row w3-border myFav2" [class.gradientBg]="item.type=='book'" [class.gradientBg2]="item.type=='dvd'">
+  <div class="w3-third rightAlign w3-container">
+    <p>Reader ID :</p>
+  </div>
+  <div class="w3-twothird w3-container">
+    <p>{{item.w1673657_reader.id}}</p>
+  </div>
+</div>
+
+<div class="w3-row w3-border myFav2" [class.gradientBg]="item.type=='book'" [class.gradientBg2]="item.type=='dvd'">
+  <div class="w3-third rightAlign w3-container">
+    <p>Reader Name</p>
+  </div>
+  <div class="w3-twothird w3-container">
+    <p>{{item.w1673657_reader.name}}</p>
+  </div>
+</div>
+
+
+
+<!-- Borrowed Date -->
+
+<div class="w3-row w3-border myFav2" [class.gradientBg]="item.type=='book'" [class.gradientBg2]="item.type=='dvd'">
+  <div class="w3-third rightAlign w3-container">
+    <p>Borrowed Date :</p>
+  </div>
+  <div class="w3-twothird w3-container">
+    <p>{{item.w1673657_borrowedDate}}</p>
+
+  </div>
+</div>
+
+<!-- Borrowed Date -->
+<div class="w3-row w3-border myFav2" [class.gradientBg]="item.type=='book'" [class.gradientBg2]="item.type=='dvd'">
+  <div class="w3-third rightAlign w3-container">
+    <p>Return Date :</p>
+  </div>
+  <div class="w3-twothird w3-container">
+    <p>{{item.w1673657_returnDate}}</p>
+
+  </div>
+</div>
+
+</div>
+
+

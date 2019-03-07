@@ -1,0 +1,98 @@
+
+<p class="topic">Borrow Item</p>
+<form [formGroup]="form" style="margin-bottom: 10px">
+
+  
+  
+    <!-- for isbn No -->
+    <div class="form-group">
+      <label>ISBN No :</label>
+      <input  class="form-control myFav "  formControlName="isbn"  (change)="clearItem()"
+      id="isbn1" (keyup.enter)="findIsbn()"/>
+      <div class="alert alert-danger myFav" *ngIf="isbn.touched && !isbn.valid">
+        <div *ngIf="isbn.errors.required">ISBN is reqiured </div>
+        <div *ngIf="isbn.errors.minlength">ISBN Number should be minumum 10 characters</div>
+        <div *ngIf="isbn.errors.maxlength">ISBN Number should be maximum 13 characters</div>
+        <div *ngIf="isbn.errors.cannotContainSpaces">ISBN cannot contain spaces</div>
+      </div>
+      <button type="button" class="btn"  [disabled]="!isbn.valid" 
+      style="margin-top: 5px" (click)="findIsbn()">Find</button>
+    </div>
+
+    <!-- for Title -->
+  <div class="form-group">
+      <label>Title :</label>
+      <input readonly type="text" class="form-control myFav" formControlName="title"
+      (change)="log(title)">
+    </div>
+
+
+    <!-- for publisher -->
+  <div class="form-group">
+      <label>Publisher :</label>
+      <input readonly  type="text" class="form-control myFav"  formControlName="publisher"
+       (change)="log(publisher)">       
+    </div>
+
+    <div class="form-group">
+      <label>Reader Details</label>
+      </div>
+
+      <!-- for Reader No -->
+    <div class="form-group">
+      <label>Reader ID :</label>
+      <input   class="form-control myFav" formControlName="readerID" (keyup.enter)="findReader()" (change)="clearReader()"/>
+      <div class="alert alert-danger myFav" *ngIf="readerID.touched && !readerID.valid">
+        <div *ngIf="readerID.errors.required">Readr ID is reqiured </div>
+        <div *ngIf="readerID.errors.minlength">Readr ID Number should be minumum of 6 characters</div>
+        <div *ngIf="readerID.errors.maxlength">Readr ID Number should be maximum of 6 characters</div>
+        <div *ngIf="readerID.errors.cannotContainSpaces">Readr ID cannot contain spaces</div>
+      </div>
+      <button type="button" class="btn"  [disabled]="!readerID.valid" 
+      style="margin-top: 5px" (click)="findReader()">Find</button>
+    </div>
+
+    <!-- for Name -->
+  <div class="form-group">
+      <label>Name :</label>
+      <input readonly type="text" class="form-control myFav" formControlName="readerName" >
+      
+      </div>
+    
+
+
+    <!-- for email -->
+  <div class="form-group">
+      <label>Email :</label>
+      <input readonly  type="email" class="form-control myFav" formControlName="email" >
+      
+    </div>
+
+     <!-- for mobileNumber -->
+  <div class="form-group">
+    <label>Contact No :</label>
+    <input readonly type="text" class="form-control myFav" formControlName="contactNo" >
+    
+  </div>
+
+  <button type="button" class="btn btn-primary" #submit [disabled]="!formValid()" value="submit" 
+    (click)="setBorrowedDetails()"
+      style="margin-right:10px; ">Set Borrow Details </button>
+    <button type="reset" class="btn btn-primary" value="clear" >Clear </button>
+  
+    </form>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+
+    <footer class="w3-container w3-center w3-black w3-xlarge" > 
+        <a href="#"><i class="fa fa-facebook-official"></i></a>
+        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-flickr"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <p class="w3-medium">
+        Powered by sahan dilshan
+        </p>
+      </footer>
