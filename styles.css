@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body{
+     /* padding-left: 20px; */
+}
+
+.myFav{
+    width: 40%;
+}
+.myFav2
+{
+    width: 60%;
+}
+
+.form-control.ng-invalid.ng-touched
+{
+    border: 2px solid #d83a2f;
+}
+
+label
+{
+    font-weight: normal;
+}
+
+.topic
+{
+    font-size:30px; 
+    text-align: left;
+    font-style: italic;
+    letter-spacing: 5px
+}
+
+.myFooter
+{
+    position: fixed;
+   width: 97.5%;
+   bottom: 10px;
+}
+
+a{
+    padding-right: 6px;
+}
+
+
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 700px) {
+    .myFav,.myFav2 {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+      text-align: left;
+    }
+  }
+
+  .snack {
+    /* background: rgb(7,96,4);
+  background: linear-gradient(90deg, rgba(7,96,4,1) 10%, rgba(9,106,5,1) 90%); */
+  /* background: rgb(7,96,4);
+  background: linear-gradient(90deg, rgba(7,96,4,1) 10%, rgba(8,93,5,1) 90%); */
+  background: rgb(0,96,4);
+background: linear-gradient(90deg, rgba(0,96,4,1) 0%, rgba(0,93,11,1) 90%);
+    color: aliceblue;
+  }
+  
+  .snack .mat-simple-snackbar-action {
+      color:#ffa600
+  }
+
+
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
