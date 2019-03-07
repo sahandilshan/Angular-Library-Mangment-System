@@ -1,0 +1,72 @@
+<p class="topic">Remove Reader</p>
+<form [formGroup]="form">
+
+  <div class="form-group">
+    <label>Reader ID :</label>
+    <input class="form-control myFav" maxlength="7" formControlName="readerID" (keyup.enter)="findReader()"/>
+    <div class="alert alert-danger myFav" *ngIf="readerID.touched && !readerID.valid">
+      <div *ngIf="readerID.errors.required">Readr ID is reqiured </div>
+      <div *ngIf="readerID.errors.minlength">Readr ID Number should be minumum of 7 characters</div>
+      <div *ngIf="readerID.errors.maxlength">Readr ID Number should be maximum of 7 characters</div>
+      <div *ngIf="readerID.errors.cannotContainSpaces">Readr ID cannot contain spaces</div>
+    </div>
+    <button type="button" class="btn" [disabled]="!readerID.valid" style="margin-top: 5px" (click)="findReader()">Find</button>
+  </div>
+
+  <div *ngIf="found">
+
+  <!-- for Name -->
+  <div class="form-group">
+    <label>First Name :</label>
+    <input type="text" readonly class="form-control myFav" formControlName="fname">
+    
+  </div>
+
+  <div class="form-group">
+    <label>Last Name :</label>
+    <input type="text" readonly class="form-control myFav" formControlName="lname">
+    
+  </div>
+
+  <!-- for DOB -->
+  <div class="form-group">
+    <label>Date of Birth :</label>
+    <input type="date" readonly class="form-control myFav" formControlName="dob">
+    
+  </div>
+
+
+  <!-- for email -->
+  <div class="form-group">
+    <label>Email :</label>
+    <input type="email" readonly class="form-control myFav" formControlName="email">
+    
+  </div>
+
+  <!-- for mobileNumber -->
+  <div class="form-group">
+    <label>Contact No :</label>
+    <input type="text" readonly class="form-control myFav" maxlength="10" formControlName="contactNo">
+    
+  </div>
+
+  <button type="button" class="btn btn-primary"  [disabled]="!validForm()" value="submit" 
+  (click)="removeReader()"
+    style="margin-right:10px; ">Remove Reader </button>
+  <button type="button" class="btn btn-primary" value="clear" (click)="clear()">Clear </button>
+</div>
+  </form>
+
+  <p> </p>
+<p> </p>
+
+<footer class="w3-container w3-center w3-black w3-xlarge" [class.myFooter]="!found"> 
+    <a href="#"><i class="fa fa-facebook-official"></i></a>
+    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-flickr"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <p class="w3-medium">
+    Powered by sahan dilshan
+    </p>
+  </footer>

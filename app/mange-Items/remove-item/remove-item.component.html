@@ -1,0 +1,61 @@
+<p class="topic">Remove Item</p>
+<form [formGroup]="form">
+
+  <!-- for isbn No -->
+   <div class="form-group">
+    <label>ISBN No :</label>
+    <input  class="form-control myFav"  formControlName="isbn" (keyup.enter)="findIsbn()"/>
+    <div class="alert alert-danger myFav" *ngIf="isbn.touched && !isbn.valid">
+      <div *ngIf="isbn.errors.required">ISBN is reqiured </div>
+      <div *ngIf="isbn.errors.minlength">ISBN Number should be minumum 10 characters</div>
+      <div *ngIf="isbn.errors.maxlength">ISBN Number should be maximum 13 characters</div>
+      <div *ngIf="isbn.errors.cannotContainSpaces">ISBN cannot contain spaces</div>
+    </div>
+   
+  <button type="button" class="btn"  [disabled]="!isbn.valid" (click)="findIsbn()" style="margin-top: 5px">Find</button>
+  </div>
+
+   <div *ngIf="itemData!=null">
+
+  <!-- for item type -->
+  <div class="form-group">
+    <label>Item Type:</label>
+    <input  type="text" readonly class="form-control myFav" formControlName="item" >
+  </div>
+
+
+   <!-- for Title -->
+ <div class="form-group">
+    <label>Title :</label>
+    <input  type="text" readonly  class="form-control myFav" formControlName="title">
+  </div>
+
+   <!-- for Publisher -->
+ <div class="form-group">
+    <label>Publisher :</label>
+    <input  type="text" readonly class="form-control myFav" formControlName="publisher">
+  </div>
+ 
+
+
+<button type="button" class="btn btn-primary"  [disabled]="!validForm()" value="submit" 
+    (click)="removeItem()"
+      style="margin-right:10px; ">Remove Item </button>
+    <button type="reset" class="btn btn-primary"  value="clear" (click)="clear()">Clear </button>
+  </div> 
+</form>
+
+<p> </p>
+<p> </p>
+
+<footer class="w3-container w3-center w3-black w3-xlarge" [class.myFooter]="itemData==null" > 
+    <a href="#"><i class="fa fa-facebook-official"></i></a>
+    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-flickr"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <p class="w3-medium">
+    Powered by sahan dilshan
+    </p>
+  </footer>
+

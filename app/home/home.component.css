@@ -1,0 +1,161 @@
+.jumbotron {
+    margin-bottom: 0;
+    font-size: 30px;
+    padding: 3rem 3rem;
+    width: 300px;
+  }
+
+  #main {
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%); 
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+   
+    
+}
+.test
+{
+    overflow: visible;   
+}
+
+.mySlides
+{
+    align-content: center;
+}
+
+/* .grid-container
+	{
+		display: grid;
+		grid-template-columns: repeat(4,1fr);
+        background-image: url("https://static1.squarespace.com/static/55f70367e4b0974cf2b82009/55f71231e4b0799db9564c7f/57d07e68e4fcb5df48758600/1513791971599/AdobeStock_80306044.jpg?format=2500w");
+        
+        background-size: auto;
+        grid-gap: 20px;
+        padding: 10px;
+        z-index: 0;
+		
+	}
+	.grid-container > div
+	{
+        text-align: center;
+        color: white;
+    
+
+        background-color: black;
+        opacity: 0.8;
+
+        cursor:pointer;
+
+        transition: transform .2s;        
+        
+    }
+
+    .grid-container > div:hover
+    {
+        transform: scale(1.1);
+    }
+    
+    .centered {
+        position: absolute;
+        top: 20%;
+    
+        
+    }
+
+    .grid-container img {
+        
+        background-color: white;
+        
+        width: 100%;
+        height: auto;
+    }
+
+    
+    .item4
+    {
+        
+        grid-column: 4/5;
+        background-color: transparent;
+    }
+    .item5
+    {
+        grid-column: 1/span 2;
+        padding: 8px 8px 8px 32px;
+        text-align: center;
+        color: white;
+        background-color: black;
+        font-size: 22px;
+        
+    }
+    .item6
+    {
+        grid-column: 3/span 2;
+        background-color: transparent;
+    } */
+
+
+.btn1
+{
+    
+    padding-top: 5px;
+    font-size: 22px;
+    color: black;
+    display: block;
+    /* background-color: Transparent; */
+    border: none;
+    cursor:pointer;
+    text-align: center;
+
+}
+
+.myMenu > div
+	{
+        
+        opacity: 0.8;
+
+        cursor:pointer;
+
+        transition: transform .2s;        
+        
+    }
+
+    .myMenu > div:hover
+    {
+        transform: scale(1.1);
+    }
+
+.test{
+    text-align: center;
+
+    background: rgb(50,49,49);
+    background: linear-gradient(90deg, rgba(50,49,49,0.950315160243785) 5%, rgba(238,231,231,0.9587185215883228) 50%,
+     rgba(47,47,47,0.8606793059020483) 90%, rgba(57,56,56,0.8830882694874825) 95%);
+}
+
+.item3
+    {
+       
+        padding: 8px 8px 8px 32px;
+        text-align: center;
+        color: white;
+        background: rgb(3,2,2);
+        background: linear-gradient(90deg, rgba(3,2,2,0.950315160243785) 45%, rgba(50,47,47,0.9587185215883228) 91%);
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+.item4
+{
+    padding-top: 5px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .w3-half {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+
+
+
+

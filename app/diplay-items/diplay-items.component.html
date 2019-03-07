@@ -1,0 +1,86 @@
+<p class="topic">Display Items</p>
+
+<form [formGroup]="form">
+<div class="form-group">
+  <label>Title :</label>
+  <input type="text" formControlName="title" class="form-control myFav" name="title" placeholder="Search"
+  (keyup.enter)="findTitle()"/>
+  
+  <button type="button" class="btn" 
+  style="margin-top: 5px" (click)="findTitle()">Search</button>
+</div>
+</form>
+<div *ngIf="isFind">
+
+  <ng-container *ngIf="itemsbyTitle!=null; else elseTemplate">
+
+      <div *ngFor="let item of itemsbyTitle">
+          <div  [routerLink]="['../view-item',item.type,item.w1673657_isbn]"
+           class="item w3-container" [class.gradientBg2]="item.type=='dvd'" [class.gradientBg]="item.type=='book'"
+           style="width: 40%;margin-bottom: 10px;">
+            <div class="media">
+              <div class="media-left">
+                <img [src]="item.w1673657_borrowed?red:green" class="media-object" style="width:60px;position: relative;top:5px">
+              </div>
+              <div class="media-body" style="padding-left: 5px;position: relative;top:-5px">
+                <h4 class="media-heading">{{item.w1673657_title}}</h4>
+                <p>isbn :{{item.w1673657_isbn}}</p>
+              </div>
+            </div>
+
+            
+          </div>
+  
+  </div>
+    
+  </ng-container>
+  <ng-template #elseTemplate>
+    <p>No item found..</p>
+  </ng-template>
+  <p></p>
+  
+  <button type="button" class="btn btn-primary" 
+  style="margin-top: 5px" (click)="isFind=!isFind">&lt;&lt;Back</button>  
+</div>
+
+<div *ngIf="!isFind">
+<div class="w3-black myFav">
+    <h2 class="w3-opacity">Books</h2>
+  </div>
+
+  <div *ngFor="let item of items">
+  <div *ngIf="item.type=='book'" [routerLink]="['../view-item',item.type,item.w1673657_isbn]"
+   class="item w3-container gradientBg myFav" style="margin-bottom: 10px;">
+    <div class="media">
+      <div class="media-left">
+        <img [src]="item.w1673657_borrowed?red:green" class="media-object" style="width:60px;">
+      </div>
+      <div class="media-body" style="padding-left: 5px;position: relative;top:-5px">
+        <h4 class="media-heading">{{item.w1673657_title}}</h4>
+        <p>isbn :{{item.w1673657_isbn}}</p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<div class="w3-black myFav" >
+    <h2 class="w3-opacity">DVD</h2>
+  </div>
+
+  <div *ngFor="let item of items">
+    <div *ngIf="item.type=='dvd'" [routerLink]="['../view-item',item.type,item.w1673657_isbn]"
+     class="item w3-container gradientBg2 myFav" style="margin-bottom: 10px;">
+      <div class="media">
+        <div class="media-left">
+          <img [src]="item.w1673657_borrowed?red:green" class="media-object" style="width:60px;">
+        </div>
+        <div class="media-body" style="padding-left: 5px;position: relative;top:-5px">
+          <h4 class="media-heading">{{item.w1673657_title}}</h4>
+          <p>isbn :{{item.w1673657_isbn}}</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

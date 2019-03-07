@@ -1,0 +1,32 @@
+.gradientBg
+{
+    padding-top: 5px;
+    /* background-image: linear-gradient(to right,#000046,#1cb5e0); */
+   
+ /* background-image: linear-gradient(to top, #dfe9f3 0%, white 100%); */
+ /* background: rgb(10,10,136);
+background: linear-gradient(90deg, rgba(10,10,136,0.9251050762101716) 18%, rgba(28,181,224,0.8662815467984069) 93%); */
+/* background: rgb(13,13,111);
+background: linear-gradient(90deg, rgba(13,13,111,0.9587185215883228) 10%, rgba(0,24,126,0.8606793059020483) 49%, 
+rgba(19,157,218,0.9139005944174545) 93%);
+background: rgb(0,0,37); */
+background: linear-gradient(90deg, rgba(0,0,37,0.9587185215883228) 10%, rgba(1,27,136,0.9307073171065301) 50%, 
+rgba(11,115,177,0.9531162806919643) 90%);
+    color: white;
+    /* font-weight: bold; */
+    text-shadow:1px 1px 0 #444;
+    font-size: 20px;
+    cursor: default;
+}
+
+.gradientBg2
+{
+    padding-top: 5px;
+    background-image: linear-gradient(to right,#232526,#414345);
+    color: wheat;
+    cursor: default;
+    text-shadow:1px 1px 0 #444;
+    font-size: 20px;
+    cursor: default;
+}
+

@@ -1,0 +1,24 @@
+.item:hover
+{
+        transform: scale(1.1);
+}
+.item
+{
+    transition: transform .2s;
+}
+
+.gradientBg2
+{
+    padding-top: 5px;
+    background-image: linear-gradient(to right,#232526,#414345);
+    color: wheat;
+    cursor: default;
+}
+
+.gradientBg
+{
+    padding-top: 5px;
+    background-image: linear-gradient(to right,#000046,#1cb5e0);
+    color: wheat;
+    cursor: default;
+}

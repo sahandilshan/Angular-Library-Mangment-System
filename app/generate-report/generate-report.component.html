@@ -1,0 +1,44 @@
+<p class="topic">View Report</p>
+
+<button type="button" class="btn btn-primary" #submit value="submit" 
+(click)="generateReport()"
+  style="margin-right:10px; ">Generate Report </button>
+<button type="button" class="btn btn-primary" value="clear" (click)="isVisible=!(isVisible)">Clear </button>
+
+<div *ngIf="isVisible">
+
+  <ng-container *ngIf="overDueItems.length==0; else elseTemplate">
+    <p></p>
+    <p>no overdue item to show.....</p>
+  </ng-container>
+  <ng-template #elseTemplate>
+    
+  
+
+  <div class="w3-black myFav">
+    <h2 class="w3-opacity">Report</h2>
+  </div>
+  <div *ngFor="let overDueItem of overDueItems">
+    <div  [routerLink]="['../view-item',overDueItem.item.type,overDueItem.item.w1673657_isbn]"
+     class="item w3-container gradientBg myFav" style="margin-bottom: 10px;">
+      <div class="media">
+        <div class="media-left">
+          <img [src]="overDueItem.item.w1673657_borrowed?red:green" class="media-object" style="width:60px;position: relative;top:5px">
+        </div>
+        <div class="media-body" style="padding-left: 5px;position: relative;top:-5px">
+          <h4 class="media-heading">{{overDueItem.item.w1673657_title}}</h4>
+          <p>Type :{{overDueItem.item.type}}</p>
+          <p>isbn :{{overDueItem.item.w1673657_isbn}}</p>
+          <p>Reader Id :{{overDueItem.item.w1673657_reader.id}}</p>
+          <p>Reader Name :{{overDueItem.item.w1673657_reader.name}}</p>
+          <p>Return Date :{{overDueItem.item.w1673657_returnDate}}</p>
+          <p>Fine : Rs:{{overDueItem.fine}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</ng-template>
+</div>

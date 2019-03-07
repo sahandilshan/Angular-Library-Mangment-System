@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<div id="mySidenav" class="sidenav list-group" >
+    <button class="list-group-item" href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</button>
+    <button class="sss" (click)="changePath('home')">Home</button>
+    <button (click)="changePath('borrow-item')">Borrow Item</button>
+    <button (click)="changePath('return-item')">Return Item</button>
+
+    <button class="dropdown-btn" (click)="test1('dropdown1')">Resevartions <span style="font-size: 18px">&#9660;</span></button>
+      <div class="dropdown-container" id="dropdown1" >
+        <button (click)="changePath('add-reservation')">Add Reservation</button> 
+        <button (click)="changePath('remove-reservation')">Delete Reservation</button>
+      </div>
+    
+    <button (click)="changePath('display-items')">View Items</button>
+
+    <button class="dropdown-btn" (click)="test1('dropdown2')">Manage Items <span style="font-size: 18px">&#9660;</span></button>
+      <div class="dropdown-container" id="dropdown2" >
+        <button (click)="changePath('add-item')">Add Item</button>
+        <button (click)="changePath('update-item')">Update Item</button>
+        <button (click)="changePath('remove-item')">Remove Item</button>
+      </div>
+
+      <!-- [style.display]="dropDownArr[2]==1?'none':'block'" -->
+    <button class="dropdown-btn" (click)="test1('dropdown3')">Manage Readers <span style="font-size: 18px">&#9660;</span></button>
+      <div class="dropdown-container" id="dropdown3" >
+        <button (click)="changePath('add-reader')">Add Reader</button>
+        <button (click)="changePath('update-reader')">Update Reader</button>
+        <button (click)="changePath('remove-reader')">Remove Reader</button>
+      </div>
+      
+    <button (click)="changePath('generate-report')">View Report</button>
+
+    
+  </div>
+  <div class="w3-overlay" (click)="closeNav()" id="myOverlay" style="cursor:pointer"></div>
+  <div id="main">
+    <!-- <div style="text-align: center" class="test"><h2></h2>
+       <p>Library Managment System</p></div> -->
+       <div class="titleHead">
+        <div class="container text-center">
+          <p style="font-size: 35px;font-weight: 500">University Of Westminster</p>      
+          <p>Library Managment System</p>
+        </div>
+      </div>
+      <!-- <hr> -->
+        <!-- <div class ="w3-row w3-border  w3-border-black myColor" 
+          >
+         
+            
+
+            
+
+        
+    </div> -->
+    <div class="w3-bar w3-light-grey myColor" style="margin: 10px 0 10px 0">
+        <div class="w3-left w3-blue w3-padding w3-hover-black" 
+        style="font-size:30px;cursor:pointer;" (click)="openNav()">&#9776; Menu</div>
+        
+        <div class="w3-right w3-red w3-padding  w3-hover-black" (click)="logout()"  style="font-size:30px;cursor:pointer;">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </div>
+      </div>
+
+        <router-outlet></router-outlet>
+
+  </div>
+  
+  
+  
+  
+
+  
+  
+  

@@ -1,0 +1,186 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<div>
+  <img class="mySlides w3-animate-left" [style.display]="myIndex==1 ? 'block' : 'none'" src="\assets\SlideShow\image1.png"
+    style="width:100%;max-height: 450px">
+  <img class="mySlides w3-animate-opacity" [style.display]="myIndex==2 ? 'block' : 'none'" src="\assets\SlideShow\image2.png"
+    style="width:100%;max-height: 450px">
+  <img class="mySlides w3-animate-opacity" [style.display]="myIndex==3 ? 'block' : 'none'" src="\assets\SlideShow\image3.png"
+    style="width:100%;max-height: 450px">
+  <img class="mySlides w3-animate-opacity" [style.display]="myIndex==4 ? 'block' : 'none'" src="\assets\SlideShow\image4.png"
+    style="width:100%;max-height: 450px">
+  <img class="mySlides w3-animate-opacity" [style.display]="myIndex==5 ? 'block' : 'none'" src="\assets\SlideShow\image6.png"
+    style="width:100%;max-height: 450px">
+  <img class="mySlides w3-animate-opacity" [style.display]="myIndex==6 ? 'block' : 'none'" src="\assets\SlideShow\image7.png"
+    style="width:100%;max-height: 450px">
+
+</div>
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+  <h2 class="w3-wide">Library Managment</h2>
+  <p class="w3-opacity"><i>We love knowledge</i></p>
+</section>
+<div class="w3-row" style="padding-bottom: 10px;">
+  <div class="w3-quarter w3-container">
+    <p> </p>
+  </div>
+  <div class="w3-half w3-container">
+
+    <div class="w3-row-padding myMenu">
+      <div class="w3-quarter" (click)="changePath('borrow-item')">
+        <div class="w3-margin-left test">
+          <img src="\assets\1489798288.svg" style="width:80%;padding-top: 10px;">
+          <div class="btn1">Borrow Item</div>
+        </div>
+      </div>
+      <div class="w3-quarter" (click)="changePath('return-item')">
+        <div class="w3-margin-left test">
+          <img src="\assets\returnItem.png" style="width:80%;padding-top: 10px;">
+          <div class="btn1">Return Item</div>
+        </div>
+      </div>
+      <div class="w3-quarter" (click)="changePath('display-items')">
+        <div class="w3-margin-left test">
+          <img src="\assets\view.jpg" style="width:80%;padding-top: 10px;">
+          <div class="btn1">View Items</div>
+        </div>
+      </div>
+      <div class="w3-quarter" (click)="changePath('generate-report')">
+        <div class="w3-margin-left test">
+          <img src="\assets\report.png" style="width:80%;padding-top: 10px;">
+          <div class="btn1">View Report</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w3-quarter w3-container">
+    <p> </p>
+  </div>
+</div>
+
+<div class="w3-row item3">
+  Manage Items
+</div>
+
+
+<div class="w3-row" style="padding-bottom: 10px;">
+  <div class="w3-quarter w3-container">
+    <p> </p>
+  </div>
+  <div class="w3-half w3-container">
+
+    <div class="w3-row-padding w3-row myMenu">
+
+      <div class="w3-third w3-container" (click)="changePath('add-item')">
+        <div class="w3-margin-left test">
+          <img src="\assets\addItem2.png" style="width:80%;padding-top: 10px;">
+          <div class="btn1">Add Item</div>
+        </div>
+      </div>
+
+      <div class="w3-third w3-container" (click)="changePath('update-item')">
+        <div class="w3-margin-left test">
+          <img src="\assets\update.png" style="width:80%;padding-top: 10px;">
+          <div class="btn1">Update Item</div>
+        </div>
+      </div>
+
+      <div class="w3-third w3-container" (click)="changePath('remove-item')">
+        <div class="w3-margin-left test">
+          <img src="\assets\deleteItem2.png" style="width:80%;padding-top: 10px;">
+          <div class="btn1">Remove Item</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w3-quarter w3-container">
+    <p></p>
+  </div>
+</div>
+
+<div class="w3-row item3">
+  Manage Readers
+</div>
+<div class="w3-row" style="padding-bottom: 10px;">
+  <div class="w3-quarter w3-container">
+    <p> </p>
+  </div>
+  <div class="w3-half w3-container">
+
+    <div class="w3-row-padding myMenu">
+      <div class="w3-third" (click)="changePath('add-reader')">
+        <div class="w3-margin-left test">
+          <img src="\assets\addReader1.png" style="width:80%">
+          <div class="btn1">Add Reader</div>
+        </div>
+      </div>
+      <div class="w3-third" (click)="changePath('update-reader')">
+        <div class="w3-margin-left test">
+          <img src="\assets\updateReader.png" style="width:80%">
+          <div class="btn1">Update Reader</div>
+        </div>
+      </div>
+      <div class="w3-third" (click)="changePath('remove-reader')">
+        <div class="w3-margin-left test">
+          <img src="\assets\removeReader.png" style="width:80%">
+          <div class="btn1">Remove Reader</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w3-quarter w3-container"><p> </p></div>
+</div>
+
+
+<div class="w3-row item3">
+  Manage Reservations
+</div>
+<div class="w3-row" style="padding-bottom: 10px;">
+  <div class="w3-third w3-container">
+    <p> </p>
+  </div>
+  <div class="w3-third w3-container">
+
+    <div class="w3-row-padding w3-row myMenu">
+      <div class="w3-half" (click)="changePath('add-reservation')">
+        <div class="w3-margin-left test">
+          <img src="\assets\addReservation.png" style="width:80%">
+          <div class="btn1">Add <br>Reservation  </div>
+        </div>
+      </div>
+      <div class="w3-half" (click)="changePath('remove-reservation')">
+        <div class="w3-margin-left test">
+          <img src="\assets\removeReservation.png" style="width:80%">
+          <div class="btn1">Remove<br> Reservation</div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="w3-third w3-container"><p> </p></div>
+
+
+  </div>
+
+  <footer class="w3-padding-24 w3-light-grey w3-small w3-justify" style="padding-left: 10px;" id="footer">
+
+          <h4>Address</h4>
+          <p><i class="fa fa-fw fa-map-marker"></i>University of westminster</p>
+          <p><i class="fa fa-fw fa-phone"></i> 0044123123</p>
+          <p><i class="fa fa-fw fa-envelope"></i> uowlibrary@westminster.ac.uk</p>
+
+    </footer>
+
+
+  <footer class="w3-container w3-padding-24 w3-center w3-black w3-xlarge" > 
+      <a href="#"><i class="fa fa-facebook-official"></i></a>
+      <a href="#"><i class="fa fa-pinterest-p"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-flickr"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <p class="w3-medium">
+      Powered by sahan dilshan
+      </p>
+    </footer>
+
+
+
